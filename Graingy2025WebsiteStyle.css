@@ -1,0 +1,423 @@
+body {
+    Background-color:black;
+    color: white;
+    font-family: monospace;
+}
+
+header {
+    padding: 5px 0px 5px 0px;
+    margin: 10px 0px;
+    text-align: center;
+    Background-color:rgb(81,81,81);
+    color: white;
+    font-family: monospace;
+}
+
+header h1 {
+    font-size:30px;
+}
+
+footer {
+    text-align: center;
+    margin:auto;
+    position: static;
+    bottom: 0px;
+    color: rgb(100,100,100);
+}
+
+.NavBarSuperCore {
+    position:sticky;
+    top:5%;
+    z-index:5;
+}
+
+/*NavBarSuperCore is important to get the navbar to scroll with the page, being the div the whole navbar is actually inside. Realizing this was a headache.*/
+
+.NavBarSuperCore h2 {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .NavBarSuperCore h2 {
+        display: block;
+        position: absolute;
+        left: 5px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .NavBarSuperCore {
+        display: block;
+        background-color: rgb(81,81,81);
+       border: solid;
+       border-color: rgb(81,81,81) rgb(116,0,0) rgb(200,200,200);
+       border-width: 2.5px 5px 2.5px 5px;
+        height: 40px;
+        margin: -20px 0px 5px 0px;
+    top:0;
+    }
+}
+
+.NavBarCore {
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    max-width: 12.5%;
+    min-width: 200px;
+    border-width: 5px 5px 5px 15px;
+    border-style: solid;
+    border-color: rgb(116,0,0);
+    height: 750px;
+    background-color:white;
+    float:left;
+}
+
+@media screen and (max-width: 1000px) {
+.NavBarCore {
+    position:absolute;
+    top: 42.5px;
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    height: 10%;
+    width: 100%;
+    border-style: none;
+    display:none;
+    float: none;
+}
+}
+
+@media screen and (max-width: 1000px) {
+ .NavBarSuperCore:hover .NavBarCore {
+    display: block;
+ }
+}
+
+
+a.NavBase:link {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border-style: solid none solid solid;
+    border-width: 2.5px 15px;
+    border-color: rgb(200,200,200) rgb(116,0,0);
+    padding: 15px;
+    margin: 0px 0px 0px -15px;
+    display:flex;
+}
+
+@media screen and (max-width: 1000px) {
+a.NavBase:link {
+    float: none;
+    min-width: 100%;
+    position: relative;
+    border-style: solid none solid solid;
+    border-width: 2.5px 15px ;
+    border-color: rgb(200,200,200)  rgb(116,0,0);
+    margin: 0px;
+    left:-5px;
+}
+}
+
+a.NavBase:visited {
+    border-color: rgb(200,200,200) rgb(0,0,116);
+    color: black;
+}
+
+@media screen and (max-width: 1000px) {
+    a.NavBase:visited {
+        float: none;
+        max-width:150px;
+        border-style: solid none solid  solid;
+        border-width:  2.5px 15px;
+        border-color:  rgb(200,200,200) rgb(0,0,116);
+        margin: 0px;
+        display:flex;
+    }
+    }
+
+a.NavBase:hover {
+    background-color: rgb(240,240,240);
+}
+
+#NavBaseActive {
+    border-color: rgb(200,200,200) rgb(0,116,0);
+}
+
+/*NavBaseActive makes the current page's tab green in the navbar. That's it.*/
+
+@media screen and (max-width: 1000px) {
+    #NavBaseActive {
+        border-color:   rgb(200,200,200) rgb(0,116,0);
+    }
+    }
+
+    @media screen and (min-width: 1000px) {
+.NavBarCore li:first-child a {
+    border-top-style:none;
+}
+    }
+
+.NavBarCore li:last-child a {
+    border-bottom-style:none;
+}
+
+.NavBaseDropdown {
+   display:none;
+   color: black;
+   min-width: 100%; 
+}
+
+.NavBase:hover .NavBaseDropdown {
+    display: block;
+    position: absolute;
+    z-index:5;
+}
+
+/*As mentioned in the HTML, NavBaseDropdown doesn't do anything. Never worked, got left in.*/
+
+.BackgroundLogoDiv {
+    top: 0px;
+    position: fixed;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+}
+
+.BackgroundLogo {
+    position: relative;
+    left: -1000px;
+    bottom: 325px;
+    height: 1900px;
+    clip-path: circle(50%);
+}
+
+.BackgroundLogoGradient {
+    top: 0px;
+    left:0px;
+    background-image: linear-gradient(90deg, rgb(0,0,0,0.75), rgb(0,0,0,0.25));
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.VariableNavSpacer {
+    display: none;
+    background-color:red;
+    height: 50px;
+    margin: 10px
+}
+
+@media screen and (max-width: 1000px) {
+    .VariableNavSpacer {
+        display: none;
+        background-color:red;
+        height: 150px;
+        margin: 10px
+    }
+}
+
+/*I don't think VariableNavSpacer actually does anything, being an earlier attempt at getting the small screen navbar to work. Leaving it in just in case.*/
+
+.MainBody {
+    margin: auto;
+    width: 50%;
+    background-color: rgb(81,81,81,0.875);
+    padding: 1.25% 0% 2.5% 0%;
+}
+
+@media screen and (max-width: 1000px) {
+    .MainBody {
+        margin: auto;
+        width: 80%;
+        background-color: rgb(81,81,81,0.875);
+    }
+}
+
+.MainBody h1 {
+    margin: auto;
+    text-align: center;
+    max-width:90%;
+    font-size: 40px;
+}
+
+.MainBody h2 {
+    margin: auto;
+    text-align: center;
+    max-width:90%;
+}
+
+.MainBody h3 {
+    text-align: center;
+    max-width:90%;
+}
+
+.MainBody p {
+    margin: auto;
+    max-width:90%;
+    text-indent: 15px;
+    font-size: 20px;
+}
+
+.MainBody ul {
+    margin: 25px;
+}
+
+.MainBody li {
+    padding:5px 1%;
+    max-width:90%;
+    text-indent: 15px;
+    font-size: 20px;
+}
+
+.MainBody img {
+    margin: 20px 10%;
+    width: 80%;
+}
+
+.MainBody a:link {
+    text-decoration: none;
+    padding: 0px 1px;
+    text-align:center;
+    max-width:10%;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(116,0,0);
+    border-width: 3px;
+    border-radius: 5px;
+    min-width:100px
+}
+
+.MainBody a:visited {
+    text-decoration: none;
+    padding:1px;
+    text-align:center;
+    max-width:10%;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(0,0,116);
+    border-width: 3px;
+    border-radius: 5px;
+    min-width:100px
+}
+
+@media screen and (max-width: 1000px) {
+    .MainBody img {
+        margin: 10px 5%;
+        width: 90%;
+    }
+}
+
+.MainBodyParImageBox {
+    margin: auto;
+    width: 80%;
+    min-height: 1000px;
+    z-index:-1;
+}
+
+#ParImage1 {
+    background-image: url("https://2.gravatar.com/userimage/240143739/2bf0c1806399c2124840758ab0ea28bb?size=1444");
+    min-width:100%;
+    min-height:1000px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#ParImage2 {
+    background-image: url("https://0.gravatar.com/userimage/240143739/3e2c84c42a00e2706ffe606bd36a799d?size=1444");
+    min-width:100%;
+    min-height:1000px;
+    background-repeat: no-repeat;
+    background-position: 60% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#ParImage3 {
+    background-image: url("https://1.gravatar.com/userimage/240143739/4f83b67b8a776745bb8a6ab4421682a0?size=1444");
+    min-width:100%;
+    min-height:1000px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.OverviewBox {
+    margin: auto;
+    padding: 2.5% 0%;
+    background-color: rgb(100,100,100);
+    Max-width: 80%;
+
+}
+
+.OverviewBox img {
+    display:block;
+    margin: 0% 5%;
+    Min-width: 90%;
+    filter:grayscale(100%); /*Grayscale is disabled via HTML for all uses of this class except the homepage.*/
+    transition: 1s ease;
+}
+
+.OverviewBox:hover img {
+    display:block;
+    margin: 0% 5%;
+    Min-width: 90%;
+    filter:grayscale(0%);
+    transition: 1s ease;
+}
+
+
+.OverviewBox a:link {
+    display: block;
+    text-decoration: none;
+    margin: 2.5% auto;
+    padding: 5px;
+    text-align:center;
+    max-width:10%;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(116,0,0);
+    border-width: 5px;
+    border-radius: 10px;
+    min-width:100px;
+    filter: grayscale(0%);
+}
+
+.OverviewBox a:hover {
+    background-color: rgb(240,240,240);
+    filter: grayscale(0%);
+}
+
+.OverviewBox a:visited {
+    border-color: rgb(0,0,116);
+    color:black;
+    filter: grayscale(0%);
+}
+
+.OverviewCaption {
+    position: absolute;
+    font-size: 10px;
+    color: rgb(150,150,150);
+    font-weight: bold;
+}
+
+.OverviewBox iframe {
+    margin: 0% 10%;
+    width: 80%;
+    height: 450px;
+}
+
+/*iframe used exactly once in the entire site*/
